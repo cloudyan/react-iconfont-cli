@@ -1,6 +1,6 @@
 {
-  "name": "react-iconfont-cli",
-  "version": "2.0.2",
+  "name": "react-iconfont-cli2",
+  "version": "2.0.4",
   "main": "index.js",
   "keywords": [
     "iconfont",
@@ -14,15 +14,28 @@
   "author": "范文华 <531362022@qq.com>",
   "license": "MIT",
   "bin": {
-    "iconfont": "./commands/help.js",
-    "iconfont-init": "./commands/createJson.js",
-    "iconfont-h5": "./commands/createIcon.js"
+    "iconfont": "./build/commands/help.js",
+    "iconfont-init": "./build/commands/createJson.js",
+    "iconfont-h5": "./build/commands/createIcon.js"
+  },
+  "files": [
+    "build/**",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc"
   },
   "peerDependencies": {
     "react": "*"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "dependencies": {
     "colors": "^1.3.3",
+    "fs-extra": "^11.2.0",
     "glob": "^7.1.4",
     "iconfont-parser": "^1.0.0",
     "lodash": "^4.17.21",
@@ -33,13 +46,13 @@
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
     "@types/glob": "^7.1.1",
-    "@types/lodash": "^4.14.137",
+    "@types/lodash": "^4.17.0",
     "@types/minimist": "^1.2.0",
     "@types/mkdirp": "^0.5.2",
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "react": "^16.9.0",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "typescript": "^5.4.5"
   }
 }

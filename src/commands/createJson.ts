@@ -11,6 +11,6 @@ if (fs.existsSync(targetFile)) {
   console.error(colors.red('File "iconfont.json" was created before.'));
 } else {
   // fs.copyFileSync only can be used above node v8.5.0+
-  fse.copySync(path.join(__dirname, '../libs/iconfont.json'), targetFile);
+  fse.copySync(path.join(__dirname, '../config/iconfont.json'), targetFile);
   console.log(colors.green('File "iconfont.json" is created now. We recommend you add it to version control.'));
 }

@@ -3,12 +3,12 @@ set -e
 rm -rf ./build
 rm -rf ./src/iconfont
 
-./node_modules/.bin/tsc
+./node_modules/.bin/tsc # && exit 0
 
 mv ./build/src/* ./build
-rm -rf ./build/src ./build/snapshots
 cp README.md package.json LICENSE ./build
-cp -rf src/templates ./build/templates
+rm -rf ./build/src ./build/snapshots
+cp -rf ./src/templates ./build/templates
 
 old_registry=$(npm config get registry)
 npm config set registry https://registry.npmjs.org

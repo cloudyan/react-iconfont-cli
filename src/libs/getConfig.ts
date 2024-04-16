@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import colors from 'colors';
-import defaultConfig from './iconfont.json';
+import defaultConfig from '../config/iconfont.json';
 
 export interface Config {
   symbol_url: string;
