@@ -9,7 +9,9 @@ import { Config } from './getConfig';
 import { getTemplate } from './getTemplate';
 import {
   replaceCases,
+  replaceClassName,
   replaceComponentName,
+  replaceDefaultStyle,
   replaceExports,
   replaceImports,
   replaceNames,
@@ -34,7 +36,11 @@ export const generateComponent = (data: XmlData, config: Config) => {
   mkdirp.sync(saveDir);
   glob.sync(path.join(saveDir, '*')).forEach((file) => fs.unlinkSync(file));
 
-  copyTemplate(`helper${jsExtension}`, path.join(saveDir, `helper${jsExtension}`));
+  // copyTemplate(`helper${jsExtension}`, path.join(saveDir, `helper${jsExtension}`));
+  let helperFile: string = getTemplate('helper' + jsExtension);
+  helperFile = replaceDefaultStyle(helperFile, config.default_style);
+  fs.writeFileSync(path.join(saveDir, 'helper' + jsExtension), helperFile);
+
   if (!config.use_typescript) {
     copyTemplate('helper.d.ts', path.join(saveDir, 'helper.d.ts'));
   }
@@ -62,6 +68,8 @@ export const generateComponent = (data: XmlData, config: Config) => {
     singleFile = replaceComponentName(singleFile, componentName);
     singleFile = replaceSingleIconContent(singleFile, generateCase(item, 4));
     singleFile = replaceSizeUnit(singleFile, config.unit);
+    // singleFile = replaceDefaultStyle(singleFile, config.default_style);
+    singleFile = replaceClassName(singleFile, iconIdAfterTrim, config.default_class_name);
 
     fs.writeFileSync(path.join(saveDir, componentName + jsxExtension), singleFile);
 
@@ -99,7 +107,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
 };
 
 const generateCase = (data: XmlData['svg']['symbol'][number], baseIdent: number) => {
-  let template = `\n${whitespace(baseIdent)}<svg viewBox="${data.$.viewBox}" width={size} height={size} style={style} {...rest}>\n`;
+  let template = `\n${whitespace(baseIdent)}<svg viewBox="${data.$.viewBox}" width={size} height={size} className={defaultClassName} style={style} {...rest}>\n`;
 
   for (const domName of Object.keys(data)) {
     if (domName === '$') {
@@ -137,7 +145,7 @@ const addAttribute = (domName: string, sub: XmlData['svg']['symbol'][number]['pa
     if (ATTRIBUTE_FILL_MAP.includes(domName)) {
       // Set default color same as in iconfont.cn
       // And create placeholder to inject color by user's behavior
-      sub.$.fill = sub.$.fill || '#333333';
+      sub.$.fill = sub.$.fill || '#CACACA';
     }
 
     for (const attributeName of Object.keys(sub.$)) {

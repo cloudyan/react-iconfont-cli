@@ -1,14 +1,10 @@
 /* eslint-disable */
 
 import React from 'react';
-import { getIconColor } from './helper';
+import { getIconColor, getIconStyle } from './helper';
 
-const DEFAULT_STYLE = {
-  display: 'block',
-};
-
-const #componentName# = ({ size, color, style: _style, ...rest }) => {
-  const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
+const #componentName# = ({ size, color, style: _style, className='', ...rest }) => {
+  const style = getIconStyle(_style)
 
   return (#iconContent#  );
 };

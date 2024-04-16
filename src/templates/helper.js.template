@@ -15,3 +15,12 @@ export const getIconColor = (color, index, defaultColor) => {
     )
     : defaultColor;
 };
+
+/**
+ * @param {object | undefined} style
+ * @return {object}
+ */
+export const getIconStyle = (style) => {
+  const DEFAULT_STYLE = #defaultStyle#
+  return {...DEFAULT_STYLE, ...style}
+};

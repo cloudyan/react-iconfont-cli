@@ -10,11 +10,11 @@ export { default as IconSetup } from './IconSetup';
 
 const IconFont = ({ name, ...rest }) => {
   switch (name) {
-    case 'alipay':
+    case 'icon-alipay':
       return <IconAlipay {...rest} />;
-    case 'user':
+    case 'icon-user':
       return <IconUser {...rest} />;
-    case 'setup':
+    case 'icon-setup':
       return <IconSetup {...rest} />;
 
   }

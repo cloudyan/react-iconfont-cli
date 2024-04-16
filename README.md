@@ -1,4 +1,17 @@
 ## react-iconfont-cli
+
+update: 做了一些调整优化
+
+- [x] svg 默认 width 和 height 改为 `1em`
+- [x] svg 默认 viewBox 不处理, iconfont 的 viewBox 为 `0 0 1024 1024`
+- [x] svg 默认 fill 属性值改为 `#CACACA`
+- [x] 修改配置 trim_icon_prefix 默认值改为 `''`, 这样生成的组件名称由 iconfont 平台控制
+- [x] 新增配置 default_style, 默认配置 `{verticalAlign: '-0.125em', fill: 'currentColor'}`
+- [x] 新增配置 default_class_name, 用于配置 svg 的统一css 类名，默认值 `'svgicon'`
+- [x] svg 新增 className 属性, 格式为 `${default_class_name} ${iconId}` ，如 `svgicon icon-xxx`
+
+具体参见：https://juejin.cn/post/7356625386631381027
+
 用纯JS把iconfont.cn的图标转换成React组件，不依赖字体，支持多色彩
 
 ![](https://github.com/fwh1990/react-iconfont-cli/blob/master/images/icons.png?raw=true)
@@ -14,6 +27,9 @@
 ## Step 1
 安装插件
 ```bash
+# pnpm
+pnpm install react-iconfont-cli -D
+
 # Yarn
 yarn add react-iconfont-cli --dev
 

@@ -18,8 +18,8 @@ set -e
 
 if [ -z "$whoami" ]
 then
-   echo "login plz..."
-   npm login
+  echo "login plz..."
+  npm login
 fi
 echo "I am: $(npm whoami)"
 

@@ -1,17 +1,13 @@
 /* eslint-disable */
 
 import React from 'react';
-import { getIconColor } from './helper';
+import { getIconColor, getIconStyle } from './helper';
 
-const DEFAULT_STYLE = {
-  display: 'block',
-};
-
-const IconAlipay = ({ size, color, style: _style, ...rest }) => {
-  const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
+const IconAlipay = ({ size, color, style: _style, className='', ...rest }) => {
+  const style = getIconStyle(_style)
 
   return (
-    <svg viewBox="0 0 1024 1024" width={size + 'px'} height={size + 'px'} style={style} {...rest}>
+    <svg viewBox="0 0 1024 1024" width={size + 'px'} height={size + 'px'} className={`svgicon icon-alipay ${className}`} style={style} {...rest}>
       <path
         d="M192 692.736c0-69.632 51.2-106.496 88.064-111.104 111.104-18.432 264.192 74.24 264.192 74.24-69.632 88.064-166.912 134.144-241.152 134.144-65.024-4.608-111.104-41.472-111.104-97.28z"
         fill={getIconColor(color, 0, '#5B8BD4')}
@@ -25,7 +21,7 @@ const IconAlipay = ({ size, color, style: _style, ...rest }) => {
 };
 
 IconAlipay.defaultProps = {
-  size: 14,
+  size: 16,
 };
 
 export default IconAlipay;

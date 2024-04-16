@@ -1,0 +1,9 @@
+{
+    "symbol_url": "//at.alicdn.com/t/c/font_4509746_fvvx6l350yb.js",
+    "use_typescript": true,
+    "save_dir": "./snapshots/demo3",
+    "trim_icon_prefix": "",
+    "class_name": "svgicon",
+    "unit": "em",
+    "default_icon_size": 1
+}

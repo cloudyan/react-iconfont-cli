@@ -9,7 +9,7 @@ export { default as IconAlipay } from './IconAlipay';
 export { default as IconUser } from './IconUser';
 export { default as IconSetup } from './IconSetup';
 
-export type IconNames = 'alipay' | 'user' | 'setup';
+export type IconNames = 'icon-alipay' | 'icon-user' | 'icon-setup';
 
 interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
   name: IconNames;
@@ -19,11 +19,11 @@ interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
 
 const IconFont: FunctionComponent<Props> = ({ name, ...rest }) => {
   switch (name) {
-    case 'alipay':
+    case 'icon-alipay':
       return <IconAlipay {...rest} />;
-    case 'user':
+    case 'icon-user':
       return <IconUser {...rest} />;
-    case 'setup':
+    case 'icon-setup':
       return <IconSetup {...rest} />;
 
   }

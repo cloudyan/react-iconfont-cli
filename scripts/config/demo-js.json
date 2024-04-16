@@ -2,7 +2,8 @@
   "symbol_url": "http://at.alicdn.com/t/font_1373348_ghk94ooopqr.js",
   "use_typescript": false,
   "save_dir": "./snapshots/demo-js",
-  "trim_icon_prefix": "icon",
+  "trim_icon_prefix": "a_icon",
+  "class_name": "svgicon",
   "unit": "px",
-  "default_icon_size": 14
+  "default_icon_size": 16
 }

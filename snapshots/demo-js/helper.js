@@ -15,3 +15,12 @@ export const getIconColor = (color, index, defaultColor) => {
     )
     : defaultColor;
 };
+
+/**
+ * @param {object | undefined} style
+ * @return {object}
+ */
+export const getIconStyle = (style) => {
+  const DEFAULT_STYLE = {"verticalAlign":"-0.125em","fill":"currentColor"}
+  return {...DEFAULT_STYLE, ...style}
+};

@@ -2,7 +2,12 @@
   "symbol_url": "请参考README.md，复制官网提供的JS链接",
   "use_typescript": false,
   "save_dir": "./src/components/iconfont",
-  "trim_icon_prefix": "icon",
-  "unit": "px",
-  "default_icon_size": 18
+  "trim_icon_prefix": "",
+  "default_class_name": "svgicon",
+  "default_style": {
+    "verticalAlign": "-0.125em",
+    "fill": "currentColor"
+  },
+  "unit": "em",
+  "default_icon_size": 1
 }

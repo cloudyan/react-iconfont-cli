@@ -35,6 +35,22 @@ export const replaceSizeUnit = (content: string, unit: string) => {
   return content.replace(/\{size\}/g, `{size + '${unit}'}`);
 };
 
+export const replaceDefaultStyle = (content: string, defaultStyle = {}) => {
+  const style = {
+    // display: 'inline-block',
+    verticalAlign: '-0.125em',
+    fill: 'currentColor',
+    ...defaultStyle,
+  }
+  return content.replace(/#defaultStyle#/g, JSON.stringify(style, null, ''))
+};
+
+export const replaceClassName = (content: string, iconIdAfterTrim: string, defaultClassName: string = '') => {
+  // {`svgicon icon-xxx ${className}`}
+  const cls = '{`' + `${defaultClassName} ${iconIdAfterTrim}` + ' ${className}`}';
+  return content.replace(/\{defaultClassName\}/g, cls);
+};
+
 export const replaceExports = (content: string, exports: string[]) => {
   return content.replace(/#exports#/g, exports.map(
     (item) => `export { default as ${item} } from './${item}';`).join('\n')
