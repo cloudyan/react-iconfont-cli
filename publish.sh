@@ -5,9 +5,9 @@ rm -rf ./src/iconfont
 
 ./node_modules/.bin/tsc # && exit 0
 
-mv ./build/src/* ./build
+# mv ./build/src/* ./build
 cp README.md package.json LICENSE ./build
-rm -rf ./build/src ./build/snapshots
+# rm -rf ./build/src ./build/snapshots
 cp -rf ./src/templates ./build/templates
 
 old_registry=$(npm config get registry)

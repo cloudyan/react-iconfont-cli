@@ -10,13 +10,16 @@
     "icons",
     "iconfont.cn"
   ],
-  "repository": "git@github.com:iconfont-cli/react-iconfont-cli.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/iconfont-cli/react-iconfont-cli.git"
+  },
   "author": "范文华 <531362022@qq.com>",
   "license": "MIT",
   "bin": {
-    "iconfont": "./build/commands/help.js",
-    "iconfont-init": "./build/commands/createJson.js",
-    "iconfont-h5": "./build/commands/createIcon.js"
+    "iconfont": "build/commands/help.js",
+    "iconfont-init": "build/commands/createJson.js",
+    "iconfont-h5": "build/commands/createIcon.js"
   },
   "files": [
     "build/**",
@@ -24,6 +27,8 @@
     "LICENSE"
   ],
   "scripts": {
+    "prebuild": "rm -rf ./build",
+    "postbuild": "cp -rf ./src/templates ./build/templates",
     "build": "tsc"
   },
   "peerDependencies": {
