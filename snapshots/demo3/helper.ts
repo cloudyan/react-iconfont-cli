@@ -17,6 +17,6 @@ export const getIconColor = (color: string | string[] | undefined, index: number
  * @return {object}
  */
 export const getIconStyle = (style: CSSProperties | undefined) => {
-  const DEFAULT_STYLE: CSSProperties = {"verticalAlign":"-0.125em","fill":"currentColor"}
+  const DEFAULT_STYLE: CSSProperties = {"verticalAlign":"-0.125em","fill":"currentColor","display":"inline-block"}
   return {...DEFAULT_STYLE, ...style} as CSSProperties
 };

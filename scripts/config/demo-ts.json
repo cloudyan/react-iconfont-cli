@@ -3,7 +3,7 @@
   "use_typescript": true,
   "save_dir": "./snapshots/demo-ts",
   "trim_icon_prefix": "c_icon",
-  "class_name": "svgicon",
+  "default_class_name": "svgicon",
   "unit": "em",
   "default_icon_size": 1
 }
