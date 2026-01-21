@@ -12,6 +12,41 @@ update: 做了一些调整优化
 
 具体参见：https://juejin.cn/post/7356625386631381027
 
+本地开发
+
+```bash
+pnpm i react-iconfont-cli2 -D
+# 初始化
+npx iconfont-init
+
+# 生成配置文件 iconfont.json，示例如下
+# 配置配置 symbol_url
+
+# 开始生成React标准组件
+npx iconfont-h5
+
+# 测试验证
+npm test
+```
+
+生成的配置如下
+
+```json
+{
+    "symbol_url": "//at.alicdn.com/t/c/font_4509746_fvvx6l350yb.js",
+    "use_typescript": true,
+    "save_dir": "./src/components/iconfont",
+    "trim_icon_prefix": "",
+    "default_class_name": "svgicon",
+    "default_style": {
+        "verticalAlign": "-0.125em",
+        "fill": "currentColor"
+    },
+    "unit": "em",
+    "default_icon_size": 1
+}
+```
+
 用纯JS把iconfont.cn的图标转换成React组件，不依赖字体，支持多色彩
 
 ![](https://github.com/fwh1990/react-iconfont-cli/blob/master/images/icons.png?raw=true)

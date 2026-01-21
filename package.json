@@ -27,6 +27,7 @@
     "LICENSE"
   ],
   "scripts": {
+    "test": "./scripts/update-snapshot.sh",
     "prebuild": "rm -rf ./build",
     "postbuild": "cp -rf ./src/templates ./build/templates",
     "build": "tsc"
@@ -39,7 +40,7 @@
     "access": "public"
   },
   "dependencies": {
-    "colors": "^1.3.3",
+    "colors": "^1.4.0",
     "fs-extra": "^11.2.0",
     "glob": "^7.1.4",
     "iconfont-parser": "^1.0.0",
